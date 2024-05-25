@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require('cors');
-const DB = require('./dbprocedures');
-const auth = require('./authProcedures');
+const DB = require('../dbprocedures');
+const auth = require('../authProcedures');
 
 const app = express();
 const port = 3001;
