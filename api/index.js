@@ -4,7 +4,7 @@ const DB = require('../dbprocedures');
 const auth = require('../authProcedures');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -35,6 +35,17 @@ app.post('/register', (req, res) => {
             }
         })
 
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
+})
+
+app.get('/categories', (req, res) => {
+    try {
+        DB.getCategories()
+        .then((responseDB) => {
+            res.status(200).json(responseDB)
+        })
     } catch (error) {
         res.status(500).json({message: error.message})
     }

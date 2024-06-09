@@ -21,6 +21,19 @@ async function insertUser(extId, firstName, lastName, email) {
     }
 }
 
+async function getCategories() {
+    try {
+        const pool = await get('default', config);
+        return pool.request().execute('[cnf].[spX_ObtenerCategorias]')
+                            .then((response) => {
+                                return response.recordset;
+                            })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     insertUser,
+    getCategories,
 }
