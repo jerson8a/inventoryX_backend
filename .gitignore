@@ -13,7 +13,7 @@
 .firebase
 .firebaserc
 firebase.json
-ServiceAccount.json
+# ServiceAccount.json
 
 # misc
 
