@@ -15,7 +15,7 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-    res.send("Hello from node API Server")
+    res.send("Hello from node API Server in Azure")
 });
 
 app.post('/register', (req, res) => {
