@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 const config = {
-    user: 'jerson.ochoa',
-    password: 'R@yo2102',
-    server: 'prismadb.database.windows.net',
-    database: 'Prisma_DB',
+    user: process.env.AZURE_SQL_USERNAME,
+    password: process.env.AZURE_SQL_PASSWORD,
+    server: process.env.AZURE_SQL_SERVER,
+    database: process.env.AZURE_SQL_DATABASE,
     pool: {
         max: 10,
         min: 0,
